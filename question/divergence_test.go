@@ -134,3 +134,61 @@ func TestIsOpenHospital(t *testing.T) {
 	ideal = false
 	require.Equal(t, result, ideal)
 }
+
+func TestXAndYCondition(t *testing.T) {
+	var (
+		x, y             int
+		actual, expected string
+	)
+
+	x, y = 2, 4
+	actual = XAndYCondition(x, y)
+	expected = "x is smaller than y and x and y are both even number."
+	require.Equal(t, actual, expected)
+
+	x, y = -5, -5
+	actual = XAndYCondition(x, y)
+	expected = "x equals to y and x and y are both negative value"
+	require.Equal(t, actual, expected)
+
+	x, y = 101, 35
+	actual = XAndYCondition(x, y)
+	expected = "x is less than or equals to 10\n" +
+		"or x is greater than or equals to 100\n" +
+		"and y is greater than or equals to 10\n" +
+		"and y is less than or equals to 100"
+
+	require.Equal(t, actual, expected)
+
+	x, y = 2, -5
+	actual = XAndYCondition(x, y)
+	expected = "x and y are not x is negative and y is negative"
+	require.Equal(t, actual, expected)
+}
+
+func TestNumberOfDays(t *testing.T) {
+	var (
+		month            int
+		actual, expected string
+	)
+
+	month = 4
+	actual = NumberOfDays(month)
+	expected = "30"
+	require.Equal(t,actual, expected)
+
+	month = 5
+	actual = NumberOfDays(month)
+	expected = "31"
+	require.Equal(t,actual, expected)
+
+	month = 2
+	actual = NumberOfDays(month)
+	expected = "28"
+	require.Equal(t,actual, expected)
+
+	month = 13
+	actual = NumberOfDays(month)
+	expected = "It's not month"
+	require.Equal(t,actual, expected)
+}
