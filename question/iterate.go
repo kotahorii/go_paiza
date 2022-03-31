@@ -293,3 +293,22 @@ func CalcMeanByInput() float64 {
 		}
 	}
 }
+
+func PrintSomeSymbol(n int) {
+	for i := 1; i < n+1; i++ {
+		fmt.Println(strings.Repeat("$", i))
+	}
+}
+
+func PrintX(n int) {
+	for i := 1; i < n+1; i++ {
+		for j := 1; j < n+1; j++ {
+			if i == j || j == n-i+1 {
+				fmt.Print("X")
+			} else {
+				fmt.Print(" ")
+			}
+		}
+		fmt.Println()
+	}
+}
