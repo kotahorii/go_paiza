@@ -7,6 +7,7 @@ import (
 	"math"
 	"os"
 	"strconv"
+	"strings"
 )
 
 func DisplaySPAM10Times() []string {
@@ -119,4 +120,82 @@ func DisplayBaseBallScore() {
 	} else {
 		fmt.Println("draw")
 	}
+}
+
+func ReturnMaxVal() (max int) {
+	sc := bufio.NewScanner(os.Stdin)
+	for i := 0; i < 10; i++ {
+		fmt.Printf("%d times: ", i+1)
+		if sc.Scan() {
+			num, err := strconv.Atoi(sc.Text())
+
+			if err != nil {
+				log.Fatal("invalid value")
+			}
+			if num < 0 {
+				log.Fatal("please input positive value")
+			}
+
+			if max < num {
+				max = num
+			}
+		}
+	}
+
+	return
+}
+
+func ReturnMaxAndMin() (max, min int) {
+	sc := bufio.NewScanner(os.Stdin)
+	for i := 0; i < 10; i++ {
+		fmt.Printf("%d times: ", i+1)
+		if sc.Scan() {
+			num, err := strconv.Atoi(sc.Text())
+
+			if err != nil {
+				log.Fatal("invalid value")
+			}
+			if max == 0 {
+				max = num
+			}
+			if min == 0 {
+				min = num
+			}
+
+			if max < num {
+				max = num
+			}
+			if min > num {
+				min = num
+			}
+		}
+	}
+
+	return
+}
+
+func RepeatAste(n int) (asterisk string) {
+	asterisk = strings.Repeat("*", n)
+	return
+}
+
+func ReturnIterateNum(n int) (iterateNum string) {
+	for i := 0; i < n; i++ {
+		iterateNum += fmt.Sprint(i % 10)
+	}
+	return
+}
+
+func AddNum() (sum int) {
+	sc := bufio.NewScanner(os.Stdin)
+	for sum < 100 {
+		if sc.Scan() {
+			num, err := strconv.Atoi(sc.Text())
+			if err != nil {
+				log.Fatal(err)
+			}
+			sum += num
+		}
+	}
+	return
 }
