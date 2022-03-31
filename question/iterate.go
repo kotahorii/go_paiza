@@ -199,3 +199,38 @@ func AddNum() (sum int) {
 	}
 	return
 }
+
+func CountStrike() {
+	sc := bufio.NewScanner(os.Stdin)
+	var (
+		strike, ball int
+	)
+	for {
+		if strike >= 3 || ball >= 4 {
+			break
+		}
+
+		fmt.Println("input strike: 1 or ball: 2 or foul: 3")
+		if sc.Scan() {
+			num, err := strconv.Atoi(sc.Text())
+			if err != nil {
+				log.Fatal(err)
+			}
+
+			switch num {
+			case 1:
+				strike += 1
+			case 2:
+				ball += 1
+			case 3:
+				if strike < 2 {
+					strike += 1
+				}
+			default:
+				fmt.Println("please input 1 or 2")
+			}
+		}
+	}
+
+	fmt.Printf("%d strike, %d ball", strike, ball)
+}
