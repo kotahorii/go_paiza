@@ -262,3 +262,34 @@ func CalcPrimeFactor(n int) (result []int) {
 	}
 	return
 }
+
+func PrintTimesTable() {
+	for i := 1; i < 10; i++ {
+		for j := 1; j < 10; j++ {
+			fmt.Printf("%d * %d = %2d, ", j, i, i*j)
+		}
+		fmt.Println()
+	}
+}
+
+func CalcMeanByInput() float64 {
+	sc := bufio.NewScanner(os.Stdin)
+	count := 0
+	sum := 0
+
+	for {
+		fmt.Println("please input number")
+		if sc.Scan() {
+			if num, err := strconv.Atoi(sc.Text()); err != nil {
+				log.Println("please input number")
+			} else {
+				if num == 0 && count != 0 {
+					return float64(sum) / float64(count)
+				}
+
+				sum += num
+				count += 1
+			}
+		}
+	}
+}

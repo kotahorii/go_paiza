@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(question.CalcPrimeFactor(20))
+	fmt.Println(question.CalcMeanByInput())
 }
