@@ -1,9 +1,10 @@
 package main
 
 import (
+	"fmt"
 	"go/paiza/question"
 )
 
 func main() {
-	question.CountStrike()
+	fmt.Println(question.CalcPrimeFactor(20))
 }

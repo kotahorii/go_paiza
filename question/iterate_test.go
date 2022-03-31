@@ -43,3 +43,25 @@ func TestReturnIterateNum(t *testing.T) {
 
 	require.Equal(t, actual, expected)
 }
+
+func TestIsPrime(t *testing.T) {
+	num := 13
+	actual := IsPrime(num)
+	expect := true
+
+	require.Equal(t, actual, expect)
+
+	num = 99
+	actual = IsPrime(num)
+	expect = false
+
+	require.Equal(t, actual, expect)
+}
+
+func TestCalcPrimeFactor(t *testing.T) {
+	num := 8
+	actual := CalcPrimeFactor(num)
+	expect := []int{2, 2, 2}
+
+	require.Equal(t, actual, expect)
+}

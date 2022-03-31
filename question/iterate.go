@@ -234,3 +234,31 @@ func CountStrike() {
 
 	fmt.Printf("%d strike, %d ball", strike, ball)
 }
+
+func IsPrime(n int) bool {
+	if n%2 == 0 || n%3 == 0 {
+		return false
+	}
+
+	for i := 5; i < int(math.Sqrt(float64(n)))+1; i++ {
+		if n%i == 0 {
+			return false
+		}
+	}
+	return true
+}
+
+func CalcPrimeFactor(n int) (result []int) {
+	div := 2
+	divided := n
+	for div < n/2 {
+		if divided%div == 0 {
+			divided /= div
+			result = append(result, div)
+			continue
+		}
+
+		div += 1
+	}
+	return
+}
