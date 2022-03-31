@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	question.PrintX(4)
+	question.Fibonacci(10)
 }

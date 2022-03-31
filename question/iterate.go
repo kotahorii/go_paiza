@@ -312,3 +312,23 @@ func PrintX(n int) {
 		fmt.Println()
 	}
 }
+
+func Fibonacci(n int) {
+	a := 0
+	b := 1
+
+	if n == 0 {
+		fmt.Println(a)
+	} else if n == 1 {
+		fmt.Println(a)
+		fmt.Println(b)
+	} else {
+		fmt.Println(a)
+		fmt.Println(b)
+
+		for i := 0; i < n-2; i++ {
+			a, b = b, a+b
+			fmt.Println(b)
+		}
+	}
+}
