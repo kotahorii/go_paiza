@@ -1,7 +1,11 @@
 package main
 
-import "go/paiza/question"
+import (
+	"fmt"
+	"go/paiza/question"
+)
 
 func main() {
-	question.DisplayTwoToThePower()
+	win, lose := question.CountWinAndLose()
+	fmt.Printf("win: %d, lose: %d", win, lose)
 }
