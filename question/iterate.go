@@ -79,3 +79,44 @@ func CountWinAndLose() (win, lose int) {
 
 	return
 }
+
+func DisplayBaseBallScore() {
+	count := 0
+	sc := bufio.NewScanner(os.Stdin)
+	kyojinScore := 0
+	hanshinScore := 0
+
+	for count < 9 {
+		// kyojin score
+		fmt.Printf("%d front: ", count+1)
+		if sc.Scan() {
+			if num, err := strconv.Atoi(sc.Text()); err != nil {
+				log.Println("invalid: ", err)
+				continue
+			} else {
+				kyojinScore += num
+			}
+		}
+
+		// hanshin score
+		fmt.Printf("%d back: ", count+1)
+		if sc.Scan() {
+			if num, err := strconv.Atoi(sc.Text()); err != nil {
+				log.Println("invalid: ", err)
+				continue
+			} else {
+				hanshinScore += num
+			}
+		}
+
+		count += 1
+	}
+	fmt.Printf("kyojin: %d, hanshin: %d\n", kyojinScore, hanshinScore)
+	if kyojinScore < hanshinScore {
+		fmt.Println("hanshin won")
+	} else if kyojinScore > hanshinScore {
+		fmt.Println("Kyojin won")
+	} else {
+		fmt.Println("draw")
+	}
+}
