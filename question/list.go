@@ -3,7 +3,6 @@ package question
 import (
 	"bufio"
 	"log"
-	"math"
 	"os"
 	"strconv"
 )
