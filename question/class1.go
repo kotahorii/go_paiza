@@ -72,3 +72,44 @@ func (coinCase *CoinCase) GetCounts(kind int) (number int, err error) {
 		return 0, errors.New("please input valid type of money")
 	}
 }
+
+func (coinCase *CoinCase) GetAmount() (amount int) {
+	amount = coinCase.one +
+		coinCase.five*5 +
+		coinCase.ten*10 +
+		coinCase.fifty*50 +
+		coinCase.hundred*100 +
+		coinCase.fiveHundred*500
+
+	return
+}
+
+func (coinCase *CoinCase) GetAllCount() (counts int) {
+	counts = coinCase.one +
+		coinCase.five +
+		coinCase.ten +
+		coinCase.fifty +
+		coinCase.hundred +
+		coinCase.fiveHundred
+
+	return
+}
+
+func (coinCase *CoinCase) GetSomeAmount(kind int) (amount int, err error) {
+	switch kind {
+	case 1:
+		return coinCase.one, nil
+	case 5:
+		return coinCase.five * 5, nil
+	case 10:
+		return coinCase.ten * 10, nil
+	case 50:
+		return coinCase.fifty * 50, nil
+	case 100:
+		return coinCase.hundred * 100, nil
+	case 500:
+		return coinCase.fiveHundred * 500, nil
+	default:
+		return 0, errors.New("please input valid type of money")
+	}
+}

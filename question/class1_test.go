@@ -24,3 +24,40 @@ func TestGetCounts(t *testing.T) {
 	_, err := coincase.GetCounts(30)
 	require.Error(t, err)
 }
+
+func TestGetAllCount(t *testing.T) {
+	coincase := NewCoinCase()
+	coincase.AddCoins(1, 3)
+	coincase.AddCoins(5, 2)
+	coincase.AddCoins(10, 3)
+	coincase.AddCoins(50, 1)
+	coincase.AddCoins(100, 2)
+	coincase.AddCoins(500, 3)
+
+	actual := coincase.GetAllCount()
+	expected := 14
+	require.Equal(t, actual, expected)
+}
+
+func TestGetAmount(t *testing.T) {
+	coincase := NewCoinCase()
+	coincase.AddCoins(1, 3)
+	coincase.AddCoins(5, 2)
+	coincase.AddCoins(10, 3)
+	coincase.AddCoins(50, 1)
+	coincase.AddCoins(100, 2)
+	coincase.AddCoins(500, 3)
+
+	actual := coincase.GetAmount()
+	expected := 1793
+	require.Equal(t, actual, expected)
+}
+
+func TestGetSomeAmount(t *testing.T) {
+	coincase := NewCoinCase()
+	coincase.AddCoins(500, 3)
+
+	actual, _ := coincase.GetSomeAmount(500)
+	expected := 1500
+	require.Equal(t, actual, expected)
+}
