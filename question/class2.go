@@ -22,3 +22,7 @@ func (cat *Cat) ShowProfile() {
 func (cat *Cat) Sleep() {
 	fmt.Println("zzz...")
 }
+
+func PrintAnimalName(a Animal) {
+	a.ShowProfile()
+}
