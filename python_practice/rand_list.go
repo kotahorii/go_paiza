@@ -1,6 +1,8 @@
 package pythonpractice
 
-import "math/rand"
+import (
+	"math/rand"
+)
 
 func RandList(leng, lower, upper int) (result []int) {
 	for len(result) < leng {
@@ -12,3 +14,5 @@ func RandList(leng, lower, upper int) (result []int) {
 	}
 	return
 }
+
+
