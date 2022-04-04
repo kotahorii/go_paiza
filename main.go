@@ -1,6 +1,10 @@
 package main
 
-import "go/paiza/question"
+import (
+	"fmt"
+	"go/paiza/question"
+	"strings"
+)
 
 func main() {
 	cat1 := question.NewCat("cat1", 43)
@@ -16,5 +20,11 @@ func main() {
 		dog1,
 		cat2,
 		dog2,
+	}
+
+	for _, animal := range animalSlice {
+		fmt.Println(strings.Repeat("*", 25))
+		animal.ShowProfile()
+		animal.Speak()
 	}
 }
