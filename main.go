@@ -3,9 +3,8 @@ package main
 import (
 	"fmt"
 	pythonpractice "go/paiza/python_practice"
-	"strings"
 )
 
 func main() {
-	fmt.Println(pythonpractice.MapConcat(func(s string) string { return strings.Repeat(s, 3) }, "abc", "-"))
+	fmt.Println(pythonpractice.MyFilter(pythonpractice.IsEven, []int{1, 2, 3, 4, 5}))
 }
