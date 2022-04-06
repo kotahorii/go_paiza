@@ -1,8 +1,13 @@
 package pythonrdy
 
-func GCP(a, b int) int {
+import (
+	"log"
+)
+
+func GCD(a, b int) int {
+	log.Println(a, b)
 	if b == 0 {
 		return a
 	}
-	return GCP(b, a%b)
+	return GCD(b, a%b)
 }
