@@ -6,6 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(pythonpractice.MyFilter(pythonpractice.IsEven, []int{1, 2, 3, 4, 5}))
-
+	fmt.Println(pythonpractice.Grange(0, 10, 1))
 }

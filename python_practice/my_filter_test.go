@@ -55,3 +55,33 @@ func TestPartitionScore(t *testing.T) {
 	}
 	require.Equal(t, actual, expected)
 }
+
+func TestGrange(t *testing.T) {
+	actual := Grange(0, 10, 1)
+	expected := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+	require.Equal(t, actual, expected)
+
+	actual = Grange(1, 5, 1)
+	expected = []int{1, 2, 3, 4}
+	require.Equal(t, actual, expected)
+
+	actual = Grange(0, 10, 2)
+	expected = []int{0, 2, 4, 6, 8}
+	require.Equal(t, actual, expected)
+
+	actual = Grange(0, -5, -1)
+	expected = []int{0, -1, -2, -3, -4}
+	require.Equal(t, actual, expected)
+
+	actual = Grange(0, 0, 1)
+	expected = []int{}
+	require.Equal(t, actual, expected)
+
+	actual = Grange(1, 0, 1)
+	expected = []int{}
+	require.Equal(t, actual, expected)
+
+	actual = Grange(0, 1, -1)
+	expected = []int{}
+	require.Equal(t, actual, expected)
+}
