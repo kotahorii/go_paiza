@@ -3,6 +3,7 @@ package pythonrdy
 import (
 	"fmt"
 	"math"
+	"strconv"
 )
 
 func PrimeNumber(max int) (result []int) {
@@ -27,8 +28,9 @@ func PrimeNumber(max int) (result []int) {
 	return
 }
 
-func NTimes(n float64) string {
+func NTimes(n float64) (result int) {
 	num := int(math.Pow(n, math.Pow(n, n)))
-	result := fmt.Sprint(num)[1]
-	return string(result)
+	str := fmt.Sprint(num)
+	result, _ = strconv.Atoi(string(str[len(str)-1]))
+	return
 }

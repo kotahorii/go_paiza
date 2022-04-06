@@ -13,5 +13,11 @@ func TestPrimeNumber(t *testing.T) {
 }
 
 func TestNtimes(t *testing.T) {
-	
+	actual := NTimes(3)
+	expected := 7
+	require.Equal(t, expected, actual)
+
+	actual = NTimes(2)
+	expected = 6
+	require.Equal(t, expected, actual)
 }
