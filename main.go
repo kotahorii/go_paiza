@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(pythonrdy.GenPassword(33))
+	fmt.Println(pythonrdy.Reg())
 }
