@@ -27,7 +27,7 @@ func SortNumInTextFile(filename string) (result []int) {
 		}
 	}
 
-	// sort by decend
+	// sort by decending
 	sort.Slice(result, func(i, j int) bool {
 		return result[i] > result[j]
 	})
