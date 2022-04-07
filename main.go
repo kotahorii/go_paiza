@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(pythonrdy.CountPython("./text.txt", "python"))
+	fmt.Println(pythonrdy.GenPassword(33))
 }
