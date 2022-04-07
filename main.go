@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(pythonrdy.ConvTemperature("5C"))
+	fmt.Println(pythonrdy.CountPython("./text.txt", "python"))
 }
