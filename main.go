@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(pythonrdy.NTimes(3))
+	fmt.Println(pythonrdy.ConvTemperature("5C"))
 }
