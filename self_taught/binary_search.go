@@ -11,9 +11,9 @@ func BinarySearch(a_list []int, n int) bool {
 		}
 
 		if n > a_list[mid] {
-			first = a_list[mid] + 1
+			first = mid + 1
 		} else {
-			last = a_list[mid] - 1
+			last = mid - 1
 		}
 	}
 	return false

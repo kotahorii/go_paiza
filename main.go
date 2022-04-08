@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(selftaught.Factorial(10))
+	fmt.Println(selftaught.MergeSort([]int{5, 3, 2, 1}))
 }
