@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	pythonrdy "go/paiza/python_rdy"
+	selftaught "go/paiza/self_taught"
 )
 
 func main() {
-	fmt.Println(pythonrdy.Reg())
+	fmt.Println(selftaught.Factorial(10))
 }
