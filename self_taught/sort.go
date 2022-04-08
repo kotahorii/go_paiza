@@ -17,7 +17,7 @@ func MergeSort(a_list []int) []int {
 	if len(a_list) > 1 {
 		mid := len(a_list) / 2
 		copied_list := make([]int, len(a_list))
-		// use copy function to copy the slice
+		// Use copy function to copy the slice
 		// NG!! copied_list := a_list
 		copy(copied_list, a_list)
 		left_half := copied_list[:mid]
