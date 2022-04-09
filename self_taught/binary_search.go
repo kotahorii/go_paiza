@@ -1,8 +1,7 @@
 package selftaught
 
 func BinarySearch(a_list []int, n int) bool {
-	first := 0
-	last := len(a_list) - 1
+	first, last := 0, len(a_list)-1
 
 	for last >= first {
 		mid := (first + last) / 2

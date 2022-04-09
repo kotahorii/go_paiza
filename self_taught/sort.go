@@ -6,7 +6,7 @@ func InsertionSort(a_list []int) []int {
 
 		for i > 0 && a_list[i-1] > value {
 			a_list[i] = a_list[i-1]
-			i = i - 1
+			i -= 1
 		}
 		a_list[i] = value
 	}
