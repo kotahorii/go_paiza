@@ -1,20 +1,25 @@
 package main
 
-import (
-	"fmt"
-	"strings"
-)
+import "fmt"
 
 func main() {
-	s := "abcde"
-	for i := 0; i < len(s); i++ {
-		// The type of slice of string is byte
-		b := s[i]
-		fmt.Printf("%s: %v\n", string(b), b)
-	}
-	fmt.Println(strings.Repeat("#", 25))
+	fmt.Println(binary_search([]int{1, 2, 3, 4, 5}, 1))
+}
 
-	for _, r := range s {
-		fmt.Printf("%s: %v\n", string(r), r)
+func binary_search(a_list []int, n int) bool {
+	first, last := 0, len(a_list)-1
+
+	for last >= first {
+		mid := (first + last) / 2
+		if n == a_list[mid] {
+			return true
+		}
+
+		if n > a_list[mid] {
+			first = mid + 1
+		} else {
+			last = mid - 1
+		}
 	}
+	return false
 }
